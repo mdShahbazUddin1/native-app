@@ -27,6 +27,14 @@ const Message = require("./models/message");
 
 //endpoint for registration of the user
 
+app.get("/", async (req, res) => {
+  try {
+    res.status(200).json("response is ok");
+  } catch (error) {
+    res.status(503).json("error");
+  }
+});
+
 app.post("/register", (req, res) => {
   const { name, email, password, image } = req.body;
 
